@@ -1,3 +1,10 @@
+#sensitive info
+sql_server_config.js
+queries/users.sql
+
+# other
+.DS_store
+
 # Logs
 logs
 *.log
