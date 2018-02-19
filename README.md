@@ -1,7 +1,7 @@
 # aurablocks
 This project does two things:
-Imports ethereum blocks into a mongo db
-Exposes a rest api into the db
+* Imports ethereum blocks into a mongo db
+* Exposes a rest api into the db
 
 # Getting started
 
@@ -12,7 +12,7 @@ npm install
 ```
 
 # Configure db, rpc, cors
-Adjust config.sample.js to your liking and save as config.js
+Adjust `config.sample.js` to your liking and save as `config.js`
 
 # Start importing blocks
 `npm run watch`
@@ -21,6 +21,8 @@ This kicks off a nodejs process that continuously imports blocks from a geth nod
 
 # Create db indexes
 `npm run reindex`
+
+Create or recreate indexes on block number/hash/miner and transaction from/to
 
 # Start the rest api
 `npm start`
