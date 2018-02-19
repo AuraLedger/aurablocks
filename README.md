@@ -25,5 +25,5 @@ This kicks off a nodejs process that continuously imports blocks from a geth nod
 # Start the rest api
 `npm start`
 
-This starts an Express app at http://localhost:3000.
+This starts an Express app at http://localhost:3005.
 See server.js for available api methods.
