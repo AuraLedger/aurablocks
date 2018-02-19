@@ -1,15 +1,21 @@
 {
   "name": "aurablocks",
   "version": "1.0.0",
-  "description": "rest api for azure sql db",
-  "main": "index.js",
+  "description": "rest api for ethereum blocks",
+  "main": "server.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "watch": "node watch.js",
+    "initdb": "node initdb.js",
+    "reindex": "node reindex.js"
   },
   "keywords": [
-    "aura"
+    "aura",
+    "ethereum",
+    "mongodb",
+    "block explorer"
   ],
-  "author": "benbu",
+  "author": "ben@youstock.io",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^1.14.11"
@@ -18,7 +24,7 @@
     "async": "^2.6.0",
     "express": "^4.16.2",
     "fs": "0.0.1-security",
-    "tedious": "^2.3.1",
+    "mongodb": "^3.0.2",
     "web3": "^1.0.0-beta.29"
   }
 }

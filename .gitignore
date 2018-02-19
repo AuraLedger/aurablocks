@@ -1,6 +1,5 @@
 #sensitive info
-sql_server_config.js
-queries/users.sql
+config.js
 
 # other
 .DS_store
