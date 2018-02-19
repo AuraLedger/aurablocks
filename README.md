@@ -1,6 +1,6 @@
 # aurablocks
 This project does two things:
-* Imports ethereum blocks into a mongo db
+* Imports Aura/ethereum blocks into a mongo db
 * Exposes a rest api into the db
 
 # Getting started
