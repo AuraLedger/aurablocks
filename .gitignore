@@ -3,6 +3,7 @@ config.js
 
 # other
 .DS_store
+*.swp
 
 # Logs
 logs

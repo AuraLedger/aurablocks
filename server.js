@@ -12,12 +12,14 @@ app.use(function(req, res, next) {
 
 //get db collection
 var blocks;
+var addresses;
 mongoClient.connect(config.mongo_conn_str, function (err, db) {
   if (err) {
     console.log(err)
   }
   else {
     blocks = db.db('aura').collection('blocks');
+    addresses = db.db('aura').collection('addresses');
     console.log('connected to mongo aura db');
     app.listen(port);
     console.log('restful api server listening on: ' + port);
@@ -94,6 +96,14 @@ app.route('/miners/:addr/:skip').get(function(req, res) {
   var a = req.params.addr.toLowerCase();
   var s = Number(req.params.skip);
   blocks.find({miner: a}).project(minerFilter).sort({number:-1}).skip(s).limit(50).toArray( function(err, r) { handleResult (err, r, res); });
+});
+
+app.route('/richlist/:limit').get(function(req, res) {
+  var s = Number(req.params.limit);
+  if(s > 500) s = 500;
+  if(s < 1) s = 1;
+  s = Math.floor(s);
+  addresses.find().sort({balance: -1}).limit(s).toArray( function(err, r) { handleResult (err, r, res); });
 });
 
 function handleResult(err, rows, res) {
